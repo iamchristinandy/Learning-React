@@ -45,7 +45,10 @@
     function Main(props){
       return (
         <section>
-          <p>We serve the most delicious {props.adjective} around town</p>
+          <p>We serve the most delicious {props.adjective} around town. Here are some:</p>
+            <ul>
+                {dishes.map(dish =>(<li>{dish}</li>))}
+            </ul>
           </section>
       );
     }
@@ -57,6 +60,12 @@
           </footer>
       );
     }
+
+    const dishes = [
+      "Fufu and Groundnut Soup",
+      "Spaghetti and Cheese",
+      "Kenkey and Fried fish"
+    ];
     function App(){
       return (
         <div>
