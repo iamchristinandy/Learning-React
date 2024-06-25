@@ -19,20 +19,42 @@
               React.createElement("li", null, "Wednesday")
               ); -->
 
-          <script type="text/babel">
-            let robot = "🤖";
-            let cowboy = "🤠";
-            let moon = "🌝";
-            let name = "React";
-          ReactDOM.render(
-              <ul>
-                <li>{robot}</li>
-                <li>{cowboy}</li>
-                <li>{moon}</li>
-                <li>React</li>
-                </ul>,
-              document.getElementById("root")
-          );
-      </script>
+              <!-- <script type="text/babel"> -->
+ <!-- //       let robot = "🤖";
+      //       let cowboy = "🤠";
+      //       let moon = "🌝";
+      //       let name = "React";
+      //     ReactDOM.render(
+      //         <ul>
+      //           <li>{robot}</li>
+      //           <li>{cowboy}</li>
+      //           <li>{moon}</li>
+      //           <li>React</li>
+      //           </ul>,
+      //        ( -->
+
+        <script type="text/babel">
+        function Header(){
+          return(
+        <header>
+          <h1>Andrews' Kitchen</h1>
+          </header>
+      );
+    }
+    function Main(){
+      return (
+        <section>
+          <p>We serve the most delicious food around town</p>
+          </section>
+      );
+    }
+    ReactDOM.render(
+      <div>
+      <Main />
+      <Header />
+      </div>,
+    document.getElementById("root")
+    );
+       </script>
   </body>
 </html>
