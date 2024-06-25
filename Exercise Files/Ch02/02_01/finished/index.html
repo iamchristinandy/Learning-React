@@ -46,7 +46,7 @@
       return (
         <section>
           <img height ={200}
-          src="./restaurant.jpg"
+          src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=400"
           alt = "Table setting of a restaurant"/>
           <p>We serve the most delicious {props.adjective} around town. Here are some:</p>
             <ul>
@@ -77,11 +77,11 @@
     }))
     function App(){
       return (
-        <div>
+        <React.Fragment>
           <Header name="Andrews"/>
           <Main adjective="fufu" dishes={dishObjects}/> 
           <Footer year={new Date().getFullYear()} /> 
-        </div>
+        </React.Fragment>
       );
     }
     ReactDOM.render(
