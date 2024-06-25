@@ -34,26 +34,35 @@
       //        ( -->
 
         <script type="text/babel">
-        function Header(){
+        function Header(props){
+          console.log(props);
           return(
         <header>
-          <h1>Andrews' Kitchen</h1>
+          <h1>{props.name}' Kitchen</h1>
           </header>
       );
     }
-    function Main(){
+    function Main(props){
       return (
         <section>
-          <p>We serve the most delicious food around town</p>
+          <p>We serve the most delicious {props.adjective} around town</p>
           </section>
       );
     }
-
+    
+    function Footer(props){
+      return (
+        <footer>
+          <p>Copyright {props.year}</p>
+          </footer>
+      );
+    }
     function App(){
       return (
         <div>
-          <Header />
-          <Main />  
+          <Header name="Andrews"/>
+          <Main adjective="fufu"/> 
+          <Footer year={new Date().getFullYear()} /> 
         </div>
       );
     }
