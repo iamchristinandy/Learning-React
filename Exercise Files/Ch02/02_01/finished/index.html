@@ -47,7 +47,7 @@
         <section>
           <p>We serve the most delicious {props.adjective} around town. Here are some:</p>
             <ul>
-                {dishes.map(dish =>(<li>{dish}</li>))}
+                {props.dishes.map(dish =>(<li>{dish}</li>))}
             </ul>
           </section>
       );
@@ -70,7 +70,7 @@
       return (
         <div>
           <Header name="Andrews"/>
-          <Main adjective="fufu"/> 
+          <Main adjective="fufu" dishes={dishes}/> 
           <Footer year={new Date().getFullYear()} /> 
         </div>
       );
