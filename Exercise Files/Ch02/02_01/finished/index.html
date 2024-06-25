@@ -47,7 +47,8 @@
         <section>
           <p>We serve the most delicious {props.adjective} around town. Here are some:</p>
             <ul>
-                {props.dishes.map(dish =>(<li>{dish}</li>))}
+                {props.dishes.map((dish) =>
+                  (<li key={dish.id}>{dish.title}</li>))}
             </ul>
           </section>
       );
@@ -66,11 +67,16 @@
       "Spaghetti and Cheese",
       "Kenkey and Fried fish"
     ];
+
+    const dishObjects = dishes.map((dish, i) => ({
+      id: i,
+      title: dish
+    }))
     function App(){
       return (
         <div>
           <Header name="Andrews"/>
-          <Main adjective="fufu" dishes={dishes}/> 
+          <Main adjective="fufu" dishes={dishObjects}/> 
           <Footer year={new Date().getFullYear()} /> 
         </div>
       );
