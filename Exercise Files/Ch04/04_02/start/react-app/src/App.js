@@ -8,9 +8,15 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [emotion, setEmotion] = useState("happy");
+  const [secondary, setSecondaryEmotion] = useState("tired");
+
   useEffect(() => {
     console.log(`It's ${emotion} right now`);
     }, [emotion]);
+
+    useEffect(() => {
+      console.log(`It's ${secondary}`)
+    });
   return (
     <div className="App">
       <h1>Curent emotion is {emotion}</h1>
@@ -20,6 +26,14 @@ function App() {
         <button onClick={() => setEmotion("Awful")}>
         awful
         </button>
+        <button
+        onClick={() => setEmotion("Excited")}
+        >
+          Excited
+        </button>
+        <h2>Current secondary emotion is {secondary}.</h2>
+        <button onClick={()=>setSecondaryEmotion("grateful")}>Grateful</button>
+
     </div>
   );
 }
