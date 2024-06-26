@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 // const [firstcity, second] = ["Accra", "Tamale", "Nsawam", "Kumasi"];
@@ -8,12 +8,17 @@ import { useState } from 'react';
 
 function App() {
   const [emotion, setEmotion] = useState("happy");
-  
+  useEffect(() => {
+    console.log(`It's ${emotion} right now`);
+    }, [emotion]);
   return (
     <div className="App">
       <h1>Curent emotion is {emotion}</h1>
-      <button onClick={() => setEmotion("Sad")}>
+      <button onClick={() => setEmotion("sad")}>
         Sad
+        </button>
+        <button onClick={() => setEmotion("Awful")}>
+        awful
         </button>
     </div>
   );
