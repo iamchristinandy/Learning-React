@@ -6,12 +6,15 @@ import { useState } from 'react';
 // console.log(firstcity);
 // console.log(second);
 
-function App({library}) {
+function App() {
   const [emotion, setEmotion] = useState("happy");
   
   return (
     <div className="App">
       <h1>Curent emotion is {emotion}</h1>
+      <button onClick={() => setEmotion("Sad")}>
+        Sad
+        </button>
     </div>
   );
 }
