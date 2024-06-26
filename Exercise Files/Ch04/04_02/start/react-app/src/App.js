@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 
 
 // const [firstcity, second] = ["Accra", "Tamale", "Nsawam", "Kumasi"];
@@ -7,12 +7,12 @@ import { useState, useEffect } from 'react';
 // console.log(second);
 
 function App() {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useReducer (checked => !setChecked, false);
     return (
       <div className="App">
           <input type="checkbox"
           value={checked}
-          onChange={()=>
+          onChange={(setChecked)=>
           setChecked((checked) => !checked)
           }
           />
