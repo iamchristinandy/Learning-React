@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef } from 'react';
+import { useState } from 'react';
 
 
 // const [firstcity, second] = ["Accra", "Tamale", "Nsawam", "Kumasi"];
@@ -7,40 +7,31 @@ import { useRef } from 'react';
 // console.log(second);
 
 function App() {
-            const txtTitle = useRef();
-            const hexColor = useRef();
+            const [title, setTitle] = useState("");
+            const [color, setColor] = useState("#000000")
             const submit = e => {
               e.preventDefault();
-              const title = txtTitle.current.value;
-              const color = hexColor.current.value;
               alert(`${title}, ${color}`);
-              txtTitle.current.value = "";
-              hexColor.current.value = "";
+              setTitle("")
+              setColor("#000000");
             }
         return (
             <form onSubmit={submit}>
                 <input
-                ref={txtTitle}
+                value={title}
+                onChange={event =>
+                  setTitle(event.target.value)
+                }
                 type='text'
                 placeholder='colour title...'/>
-                <input ref={hexColor}
-                type="color"/>
+                <input
+                value={color}
+                type="color"
+                onChange={event=>setColor(event.target.value)}
+                />
                 <button>Add</button>
             </form>
         )
-  // const [checked, setChecked] = useReducer (checked => !setChecked, false);
-  //   return (
-  //     <div className="App">
-  //         <input type="checkbox"
-  //         value={checked}
-  //         onChange={(setChecked)=>
-  //         setChecked((checked) => !checked)
-  //         }
-  //         />
-  //         <label>{checked ? "checked": "not checked"}
-  //         </label>
-  //  </div>
-  
 };
 
 export default App;
